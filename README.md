@@ -1,4 +1,5 @@
 # sample_dashboard example
+(Make sure Python3.7, Django, and Pandas are installed to run correctly)
 
 1- clone repo
 
