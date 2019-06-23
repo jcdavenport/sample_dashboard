@@ -7,6 +7,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sales/', include("sales.urls")),
-    path('', RedirectView.as_view(url='/sales/', permanent=True)),
+    path('data/', include("data.urls")),
+    path('', RedirectView.as_view(url='/data/', permanent=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

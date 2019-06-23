@@ -5,10 +5,10 @@ import pandas as pd
 
 
 def index(request):
-    """ view function for sales app """
+    """ view function for data app """
 
-    # read data  TRY CONNECTING TO POSTGRESQL
-    df = pd.read_csv("sales/data/Road_Weather_Data.csv")
+    # read datasets  TRY CONNECTING TO POSTGRESQL
+    df = pd.read_csv("data/datasets/Road_Weather_Data.csv")
 
     # drop temp values equal to 9999
     df1 = df[df.SURFACE_TEMP != 9999]
