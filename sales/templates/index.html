@@ -8,6 +8,15 @@
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 </head>
+
+<style>
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+</style>
+
 <body>
 <!-- Top Bar -->
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -219,12 +228,15 @@
         <div class="border" id="container" style="min-width: 800px; height: 400px; margin: 0 auto"></div>
 
         <!-- Table data -->
+
         <h2 class="pt-4">Section Details</h2>
         <p class="text-danger">This table will be upated by Django objects, hence leaving it as it is.</p>
-        <div class="table-responsive">
+    <table class="table-responsive">
+        {{table_data|safe}}
+        <!--<div class="table-responsive">
             {{table_data|safe}}
-        </div>
-
+        </div>-->
+    </table>
 <!-- Chartjs libraries -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -239,7 +251,7 @@
               type: 'column'
 	  },
 	  title: {
-              text: 'Sales in Thousand per Engine Capacity'
+              text: 'Average Temperatures per County'
 	  },
 	  // subtitle: {
       //        text: ')'
@@ -251,13 +263,13 @@
 	  yAxis: {
               min: 0,
               title: {
-		  text: 'Sales in thousands'
+		  text: 'Temperature (F)'
               }
 	  },
 	  tooltip: {
               headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-              pointFormat: '<tr><td style="color:{series.color};padding:0">Sales:$ </td>' +
-		  '<td style="padding:0"><b>{point.y:.1f}K </b></td></tr>',
+              pointFormat: '<tr><td style="color:{series.color};padding:0">Temp: </td>' +
+		  '<td style="padding:0"><b>{point.y:.1f}F </b></td></tr>',
               footerFormat: '</table>',
               shared: true,
               useHTML: true
@@ -269,7 +281,7 @@
         }
 	  },
 	  series: [{
-              name: 'Engine Capacity',
+              name: 'County',
               data: _values
 	      
 	  }]

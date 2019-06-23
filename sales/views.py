@@ -8,9 +8,11 @@ def index(request):
     """ view function for sales app """
 
     # read data  TRY CONNECTING TO POSTGRESQL
+    df = pd.read_csv("sales/data/Road_Weather_Data.csv")
 
-    df = pd.read_csv("/home/jxdx/datathon/sample_dashboard/sales/data/car_sales.csv")
-    rs = df.groupby("Engine size")["Sales in thousands"].agg("sum")
+    # drop temp values equal to 9999
+    df1 = df[df.SURFACE_TEMP != 9999]
+    rs = df1.groupby("COUNTY_NAME")["SURFACE_TEMP"].agg("mean")
     categories = list(rs.index)
     values = list(rs.values)
 
