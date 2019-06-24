@@ -7,16 +7,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+    <style>
+        table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+    </style>
 </head>
-
-<style>
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-</style>
 
 <body>
 <!-- Top Bar -->
@@ -134,9 +132,8 @@
             </div>
         </nav>
 
-        <!--</main>-->
-        <!-- Embedded map of San Antonio traffic -->
-        <iframe src="https://embed.waze.com/iframe?zoom=13&lat=29.424349&lon=-98.491142"
+        <!-- QGIS Web Map served locally -->
+        <iframe src="http://127.0.0.1/"
                 width="50%" height="520"></iframe>
     </div>
 </div>
@@ -164,7 +161,6 @@
 <div class="border" id="container" style="min-width: 800px; height: 400px; margin: 0 auto"></div>
 
 <!-- Table datasets -->
-
 <h2 class="pt-4">Section Details</h2>
 <p class="text-danger">This table will be upated by Django objects, hence leaving it as it is.</p>
 <table class="table-responsive">
@@ -173,6 +169,7 @@
         {{table_data|safe}}
     </div>-->
 </table>
+
 <!-- Chartjs libraries -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -222,13 +219,7 @@
 	      
 	  }]
       });
-
-
-
-
-
 </script>
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
